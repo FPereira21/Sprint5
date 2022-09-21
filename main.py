@@ -6,8 +6,8 @@ if __name__ == "__main__":
         conn = mariadb.connect(
             user="felipe",
             password="password",
-            host="localhost",
-            port=3306,
+            host="172.18.0.1",
+            port=3307,
             database="DockerDB"
         )
     except mariadb.Error as e:
