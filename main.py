@@ -1,17 +1,16 @@
-import numbers
-import mariadb
+import psycopg2
 
 if __name__ == "__main__":
     try:
-        conn = mariadb.connect(
+        conn = psycopg2.connect(
             user="felipe",
             password="password",
-            host="172.18.0.1",
-            port=3307,
+            host="postgres-docker",
+            port=5432,
             database="DockerDB"
         )
-    except mariadb.Error as e:
-        print(f"Error connecting to MariaDB platform: {e}")
+    except psycopg2.Error as error:
+        print(f"Error connecting to Postgresql platform: {error}")
 
     cur = conn.cursor()
     for i in range(1,7):
@@ -20,4 +19,5 @@ if __name__ == "__main__":
     cur.execute("SELECT * FROM numbers")
     for id, number in cur:
         print(f"id: {id}, number: {number}")
+    cur.close()
     conn.close()

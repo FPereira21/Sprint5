@@ -2,9 +2,9 @@ FROM python:latest
 WORKDIR /usr/src/app
 
 COPY requirements.txt requirements.txt
-RUN apt-get install libmariadb3 libmariadb-dev && \
-    pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 COPY main.py .
+COPY wait-fot-it.sh wait-for-it.sh
 
-CMD ["python", "./main.py"]
+CMD ["wait-for-it.sh" ,"db:5432" ,"python", "./main.py"]
