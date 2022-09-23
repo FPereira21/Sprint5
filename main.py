@@ -5,7 +5,7 @@ if __name__ == "__main__":
         conn = psycopg2.connect(
             user="felipe",
             password="password",
-            host="postgres-docker",
+            host="postgresdocker",
             port=5432,
             database="DockerDB"
         )
