@@ -8,8 +8,7 @@ services:
       - POSTGRES_PASSWORD=${PASSWORD}
     volumes:
       - ./data:/docker-entrypoint-initdb.d
-    #ports:
-     # - "10000:5432"
+      - ./database:/var/lib/postgresql/data
     restart: always
   app:
     depends_on:
