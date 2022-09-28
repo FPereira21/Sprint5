@@ -13,7 +13,7 @@ services:
   app:
     depends_on:
       - db
-    image: pythonsprint5:0.1.0
+    image: pythonsprint5
     container_name: pythonsprint5
 
     

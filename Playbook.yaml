@@ -1,0 +1,5 @@
+- name: Run docker compose
+  become: True
+  shell:
+    cmd: "docker-compose up"
+    
