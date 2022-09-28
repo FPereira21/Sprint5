@@ -10,7 +10,7 @@ if __name__ == "__main__":
             database="DockerDB"
         )
     except psycopg2.Error as error:
-        print(f"Error connecting to Postgres platform: {error}")
+        print(f"Error connecting to PostgreSQL platform: {error}")
 
     cur = conn.cursor()
     for i in range(1,7):
