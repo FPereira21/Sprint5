@@ -21,8 +21,11 @@ pipeline {
     stage("deploy") {
       
       steps {
-        echo 'deploying application...
+        echo 'deploying application...'
       }
     }
+  }
+  post {
+
   }
 }
