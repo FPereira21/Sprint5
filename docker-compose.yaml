@@ -13,7 +13,7 @@ services:
   app:
     depends_on:
       - db
-    image: pythonsprint5
+    image: fpereira2112/sprint5-python
     container_name: pythonsprint5
 
     
